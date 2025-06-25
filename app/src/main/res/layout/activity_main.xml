@@ -13,8 +13,31 @@
         android:text="Audio Share App"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="24dp"
         android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/tvIpAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your IP: Loading..."
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="24dp"
+        android:textColor="@android:color/holo_blue_dark"
+        android:padding="8dp"
+        android:background="@android:drawable/dialog_holo_light_frame" />
+
+    <Button
+        android:id="@+id/btnSystemAudio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mode: Microphone"
+        android:textSize="14sp"
+        android:padding="12dp"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/holo_blue_light"
+        android:textColor="@android:color/white" />
 
     <Button
         android:id="@+id/btnHost"
@@ -22,7 +45,35 @@
         android:layout_height="wrap_content"
         android:text="Start Host"
         android:textSize="16sp"
-        android:padding="16dp" />
+        android:padding="16dp"
+        android:layout_marginBottom="16dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Target IP Address (for client mode):"
+            android:textSize="14sp"
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/etTargetIp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter host IP address (e.g., 192.168.1.100)"
+            android:inputType="text"
+            android:textSize="14sp"
+            android:padding="12dp"
+            android:background="@android:drawable/edit_text"
+            android:layout_marginBottom="8dp" />
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/btnClient"
@@ -31,15 +82,54 @@
         android:text="Start Client"
         android:textSize="16sp"
         android:padding="16dp"
-        android:layout_marginTop="16dp" />
+        android:layout_marginBottom="24dp" />
 
-    <TextView
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Note: Grant microphone permission for host mode"
-        android:textSize="12sp"
-        android:layout_marginTop="32dp"
-        android:textColor="@android:color/darker_gray"
-        android:gravity="center" />
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Instructions:"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="• Toggle mode: Microphone or System Audio"
+            android:textSize="12sp"
+            android:textColor="@android:color/darker_gray"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="• Host: Share your IP with others and start host mode"
+            android:textSize="12sp"
+            android:textColor="@android:color/darker_gray"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="• Client: Enter host's IP address and start client mode"
+            android:textSize="12sp"
+            android:textColor="@android:color/darker_gray"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="• System Audio mode requires Android 10+ and screen capture permission"
+            android:textSize="12sp"
+            android:textColor="@android:color/holo_orange_dark" />
+
+    </LinearLayout>
 
 </LinearLayout>
